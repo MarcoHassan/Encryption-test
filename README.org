@@ -1,7 +1,90 @@
 #+TITLE: Encryption 
+#+AUTHOR: Marco Hassan
 
 This repo is created to make some test about encryption and to check
 how the files are uploaded etc...
 
 Nothing fancy.
+
+
+** Symmetric Cryptography
+
+   Nice feature is the symmetric feature. This is a different encryption
+   type in comparison to the classical public-private type of encryption.
+
+   Un algoritmo simmetrico è un algoritmo che utilizza la stessa chiave sia per criptare che per decriptare.
+
+   This is especially useful when you do not have an addressed person for
+   the file such that you do not have to set his public key for him to
+   de-crypt the message. 
+
+   Rather, this is useful for and for uploading sensible files on private
+   storage systems, such as Dropbox or private Github directories.
+
+   The symmetric cryptography will ask you a password when encrypting the
+   file. This can be used at a later stage to de-crypt the file.
+
+   Notice that it is sensible to choose this password differently from
+   the private key password, for security reasons.
+
+
+** Public-Private keys
+
+   This is the standard way to share information across the network. When
+   encrypting you have to specify the public key of the receiver.
+
+   This can validate through its private key that he is the intended
+   receiver of the message as he fulfill the unique private-public key
+   combination. He will therefore be able to de-crypt the message.
+
+   Moreover in the case you decide to share your public key with the
+   person, the person will be able to verify the document you sent signed
+   with the your private key by verifying the integrity of the message.
+
+
+** Key length
+   
+   The key should be as long as possible, as once the set of bits
+   representing the key is discovered it is possible to act as the owner
+   of the key.
+
+   Hence if the key space is small as containing a few bits it is
+   possible to try by brute force all the keys resulting from the bits
+   combinations and get to the result.
+
+   #+BEGIN_QUOTE
+   L’algoritmo DES usa una chiave da 56 bit. Ciò significa che ci sono 2^56 chiavi possibili. 2^56 sono 72,057,594,037,927,936
+   chiavi. Un sacco di chiavi, ma un computer non specializzato può controllarle tutte in una manciata di
+   giorni. Un computer specializzato in poche ore.
+   #+END_QUOTE
+
+   Notice that the mail TLS confidential filter uses 40bit keys
+   because of security limits imposed by the USA government. 
+
+   You can understand now why it is important to encrypt sensible
+   messages manually through GNUpg or other encrypting mechanism when
+   sending mails.
+
+
+** How to use
+
+   Notice that to use encryption for a specific document there is no
+   need to do that from the shell using the corresponding
+   commands. This rather, can be done by editing the file with =.gpg=
+   extension. You will then be prompted with a menu asking through
+   which option you would like to encrypt the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
